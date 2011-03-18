@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=default-width; user-scalable=no" />
         
         <meta http-equiv="Content-type" content="text/html; charset=utf-8">
-            
+            <link rel="stylesheet" href="HelloPhoneGap.css" type="text/css"/>
             <title>HelloPhoneGap</title>
             
             <script type="text/javascript" charset="utf-8" src="phonegap.0.9.4.min.js"></script>
@@ -19,12 +19,93 @@
                 /* When this function is called, PhoneGap has been initialized and is ready to roll */
                 function onDeviceReady()
                 {
-                    // do your thing!
+                    phoneGapReady.innerHTML = "PhoneGap is Ready";
                 }
                 
                 </script>
             </head>
     <body onload="onBodyLoad()">
+        
+        <DIV class="phoneGapAPITitle">
+            
+            <TABLE width="100%">
+                <TR>
+                    <TD>
+                        PhoneGap API Examples
+                    </TD>
+                </TR>
+                
+            </TABLE>
+        </DIV>
+
+
+        <DIV class="phoneGapAPI"> 
+            <TABLE width="100%">
+                <TR>
+                    <TD align=left>
+                        <button class="phoneGapAPIIndexButton" onclick="document.location='accelerometer.html';">Accelerometer API</button>
+                    </TD>
+                </TR>
+                <TR>
+                    <TD align=left>
+                        <button class="phoneGapAPIIndexButton" onclick="document.location='camera.html';">Camera API</button>
+                    </TD>
+                </TR>
+                <TR>
+                    <TD align=left>
+                        <button class="phoneGapAPIIndexButton" onclick="document.location='compass.html';">Compass API</button>
+                    </TD>
+                </TR>
+                <TR>
+                    <TD align=left>
+                        <button class="phoneGapAPIIndexButton" onclick="document.location='contacts.html';">Contacts API</button>
+                    </TD>
+                </TR>
+                <TR>
+                    <TD align=left>
+                        <button class="phoneGapAPIIndexButton" onclick="document.location='device.html';">Device API</button>
+                    </TD>
+                </TR>
+                <TR>
+                    <TD align=left>
+                        <button class="phoneGapAPIIndexButton" onclick="document.location='events.html';">Events API</button>
+                    </TD>
+                </TR>
+                <TR>
+                    <TD align=left>
+                        <button class="phoneGapAPIIndexButton" onclick="document.location='file.html';">File API</button>
+                    </TD>
+                </TR>
+                <TR>
+                    <TD align=left>
+                        <button class="phoneGapAPIIndexButton" onclick="document.location='geolocation.html';">Geolocation API</button>
+                    </TD>
+                </TR>
+                <TR>
+                    <TD align=left>
+                        <button class="phoneGapAPIIndexButton" onclick="document.location='media.html';">Media API</button>
+                    </TD>
+                </TR>
+                <TR>
+                    <TD align=left>
+                        <button class="phoneGapAPIIndexButton" onclick="document.location='network.html';">Network API</button>
+                    </TD>
+                </TR>
+                <TR>
+                    <TD align=left>
+                        <button class="phoneGapAPIIndexButton" onclick="document.location='notification.html';">Notification API</button>
+                    </TD>
+                </TR>
+                <TR>
+                    <TD align=left>
+                        <button class="phoneGapAPIIndexButton" onclick="document.location='storage.html';">Storage API</button>
+                    </TD>
+                </TR>
+            </TABLE>
+            
+         </DIV>
+        
+        <DIV id="phoneGapReady" class="phoneGapReady">waiting for PhoneGap to initialize....</DIV>
         
     </body>
 </html>
