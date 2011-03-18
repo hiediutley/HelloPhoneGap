@@ -27,6 +27,94 @@
                     
                 }
                 
+                // PhoneGap is ready
+                //
+                var contactNum = 0;
+                var myContact;
+                
+                function createContact() {
+                    
+                    myContact = null;
+                    contact.innerHTML = "";
+
+                    myContact = navigator.service.contacts.create({"displayName": "Test User"  + contactNum++});
+                    
+                    if (contactNum%2 == 0)
+                    {
+                        myContact.gender = "male";
+                    }
+                    else 
+                    {
+                        myContact.gender = "female";
+                    }
+                    contact.innerHTML = "The contact, " + myContact.displayName + ", is of the " + myContact.gender + " gender";
+                    
+                    myContact.save(onSaveSuccess, onSaveError);
+                
+                    
+                }
+                
+                function removeContact()
+                {
+                    
+                    // clone
+                    var clone = myContact.clone();
+                    clone.name.givenName = "John";
+                    console.log("Original contact name = " + myContact.name.givenName);
+                    console.log("Cloned contact name = " + myContact.name.givenName); 
+                    
+                    clone.remove(onRemoveSuccess,onRemoveError);
+
+                }
+                
+                function onSaveSuccess(contacts) {
+                    contact.innerHTML = contact.innerHTML + " saved!";
+                }
+                
+                // onSaveError: Failed to get the contacts
+                //
+                function onSaveError(contactError) {
+                    alert("Error = " + contactError.code);
+                }
+
+                // onRemoveSuccess: Get a snapshot of the current contacts
+                //
+                function onRemoveSuccess(contacts) {
+                    contact.innerHTML = contact.innerHTML + " ... and then removed";
+                    myContact = null;
+                }
+                
+                // onRemoveError: Failed to get the contacts
+                //
+                function onRemoveError(contactError) {
+                    alert("Error = " + contactError.code);
+                }
+
+                
+                function findContacts() {
+                    // find all contacts with 'Bob' in any name field
+                    var options = new ContactFindOptions();
+                    options.filter="Test"; 
+                    var fields = ["displayName", "name"];
+                    navigator.service.contacts.find(fields, onSuccess, onError, options);
+                }
+                
+                // onSuccess: Get a snapshot of the current contacts
+                //{"id":1,"name":{"givenName":"Test","formatted":"Test Hiedi","middleName":null,"familyName":"Hiedi","honorificPrefix":null,"honorificSuffix":null}}
+                
+                function onSuccess(contacts) {
+                    contactsSearch.innerHTML = "";
+                    for (var i=0; i<contacts.length; i++) {
+                        contactsSearch.innerHTML = "Display Name = " + contacts[i].name.formatted + "<BR>" + contactsSearch.innerHTML;
+                    }
+                }
+                
+                // onError: Failed to get the contacts
+                //
+                function onError() {
+                    alert('Nothing Found!');
+                }
+
                 
                 </script>
             </head>
@@ -50,17 +138,30 @@
             <TABLE>
                 <TR>
                     <TD>
-                        <button onclick="">UnderConstruction</button> <br>
+                        <button onclick="">createContact() under construction...</button> <br>
+                        <button onclick="">removeContact() under construction...</button> <br>
+
                     </TD>
                 </TR>
                 
-                    
+                
                 <TR>
-                    <TD id="results" >
+                    <TD id="contact" >
                         
                     </TD>
                 </TR>
+                <TR>
+                    <TD>
+                        <button onclick="findContacts();">findContacts()</button> <br>
+                    </TD>
+                </TR>
                 
+                
+                <TR>
+                    <TD id="contactsSearch" >
+                        
+                    </TD>
+                </TR>
             </TABLE>
         </DIV>
         

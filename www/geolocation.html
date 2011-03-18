@@ -27,7 +27,59 @@
                     
                 }
                 
+                function getLocation() {
+                    navigator.geolocation.getCurrentPosition(onSuccess, onError);
+                }
                 
+                // onSuccess Geolocation
+                //
+                function onSuccess(position) {
+                    var element = document.getElementById('geolocation');
+                    element.innerHTML = 'Latitude: '           + position.coords.latitude              + '<br />' +
+                    'Longitude: '          + position.coords.longitude             + '<br />' +
+                    'Altitude: '           + position.coords.altitude              + '<br />' +
+                    'Accuracy: '           + position.coords.accuracy              + '<br />' +
+                    'Altitude Accuracy: '  + position.coords.altitudeAccuracy      + '<br />' +
+                    'Heading: '            + position.coords.heading               + '<br />' +
+                    'Speed: '              + position.coords.speed                 + '<br />' +
+                    'Timestamp: '          + new Date(position.timestamp)          + '<br />';
+                }
+                
+                // onError Callback receives a PositionError object
+                //
+                function onError(error) {
+                    alert('code: '    + error.code    + '\n' +
+                          'message: ' + error.message + '\n');
+                }
+
+                var watchID;
+                var updates = 0;
+                function startWatch() {
+                    // Update every 3 seconds
+                    var options = { frequency: 1000 };
+                    watchID = navigator.geolocation.watchPosition(onWatchSuccess, onError, options);
+                }
+                
+                // onSuccess Geolocation
+                //
+                function onWatchSuccess(position) {
+                    updates++;
+                    
+                    var element = document.getElementById('watchResult');
+                    element.innerHTML = 'Latitude: '  + position.coords.latitude      + '<br />' +
+                    'Longitude: ' + position.coords.longitude     + '<br /> updates: '+ updates +
+                    '<hr />';
+                }
+
+                
+                function stopWatch() {
+                    if (watchID != null) {
+                        navigator.geolocation.clearWatch(watchID);
+                        watchID = null;
+                        updates = 0;
+                    }
+                }
+
                 </script>
             </head>
     <body onload="onBodyLoad()">
@@ -50,17 +102,28 @@
             <TABLE>
                 <TR>
                     <TD>
-                        <button onclick="">UnderConstruction</button> <br>
+                        <button onclick="getLocation();">getLocation()</button> <br>
                     </TD>
                 </TR>
                 
                     
                 <TR>
-                    <TD id="results" >
+                    <TD id="geolocation" >
                         
                     </TD>
                 </TR>
-                
+                <TR>
+                    <TD>
+                        <button class="phoneGapAPIButton" onclick="startWatch();">startWatch(1000ms)</button>
+                        <button class="phoneGapAPIButton" onclick="stopWatch();">clearWatch()</button>
+                        
+                    </TD>
+                </TR>
+                <TR>
+                    <TD id="watchResult">
+                        
+                    </TD>
+                </TR>
             </TABLE>
         </DIV>
         

@@ -27,6 +27,49 @@
                     
                 }
                 
+                // alert dialog dismissed
+                function alertDismissed() {
+                    // do something
+                }
+                
+                // Show a custom alert
+                //
+                function showAlert() {
+                    navigator.notification.alert(
+                                                 'You are the winner!',  // message
+                                                 alertDismissed,         // callback
+                                                 'Game Over',            // title
+                                                 'Done'                  // buttonName
+                                                 );
+                }
+
+                // process the confirmation dialog result
+                function onConfirm(button) {
+                    alert('You selected button ' + button);
+                }
+                
+                // Show a custom confirmation dialog
+                //
+                function showConfirm() {
+                    navigator.notification.confirm(
+                                                   'You are the winner!',  // message
+                                                   onConfirm,              // callback to invoke with index of button pressed
+                                                   'Game Over',            // title
+                                                   'Restart,Exit'          // buttonLabels
+                                                   );
+                }
+
+                function playBeep() {
+                    navigator.notification.beep(3);
+                }
+                
+                // Vibrate for 2 seconds
+                //
+                function vibrate() {
+                    navigator.notification.vibrate(2000);
+                }
+
+                
                 
                 </script>
             </head>
@@ -50,10 +93,24 @@
             <TABLE>
                 <TR>
                     <TD>
-                        <button onclick="">UnderConstruction</button> <br>
+                        <button onclick="showAlert();">showAlert()</button> <br>
                     </TD>
                 </TR>
-                
+                <TR>
+                    <TD>
+                        <button onclick="showConfirm();">showConfirm()</button> <br>
+                    </TD>
+                </TR>
+                <TR>
+                    <TD>
+                        <button onclick="playBeep();">playBeep()</button> <br>
+                    </TD>
+                </TR>
+                <TR>
+                    <TD>
+                        <button onclick="vibrate();">vibrate()</button> <br>
+                    </TD>
+                </TR>
                     
                 <TR>
                     <TD id="results" >
