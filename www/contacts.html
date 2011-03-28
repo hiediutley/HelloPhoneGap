@@ -11,9 +11,6 @@
             <script type="text/javascript" charset="utf-8" src="phonegap.0.9.4.min.js"></script>
             <script type="text/javascript" charset="utf-8">
                 
-                var pictureSource;   // picture source
-                var destinationType; // sets the format of returned value 
-                
                 
                 function onBodyLoad()
                 {
@@ -29,46 +26,47 @@
                 
                 // PhoneGap is ready
                 //
+                var currentContact = null;
                 var contactNum = 0;
-                var myContact;
                 
                 function createContact() {
                     
-                    myContact = null;
-                    contact.innerHTML = "";
+                    results.innerHTML = "";
+                    try {
+                        var myContact = navigator.service.contacts.create();
+                        
+                        var name = new ContactName();
+                        name.familyName = "UserA" + contactNum;
+                        name.givenName = "Test";
+                        myContact.name = name;
+                        results.innerHTML = results.innerHTML + name.givenName  + " " + name.familyName;                         
+                        myContact.save(onSaveSuccess, onSaveError);
+                        //alert(myContact.toString());
+                        contactNum++;       
 
-                    myContact = navigator.service.contacts.create({"displayName": "Test User"  + contactNum++});
-                    
-                    if (contactNum%2 == 0)
-                    {
-                        myContact.gender = "male";
                     }
-                    else 
+                    catch (err)
                     {
-                        myContact.gender = "female";
+                        alert(err);
                     }
-                    contact.innerHTML = "The contact, " + myContact.displayName + ", is of the " + myContact.gender + " gender";
-                    
-                    myContact.save(onSaveSuccess, onSaveError);
-                
-                    
                 }
                 
                 function removeContact()
                 {
-                    
-                    // clone
-                    var clone = myContact.clone();
-                    clone.name.givenName = "John";
-                    console.log("Original contact name = " + myContact.name.givenName);
-                    console.log("Cloned contact name = " + myContact.name.givenName); 
-                    
-                    clone.remove(onRemoveSuccess,onRemoveError);
+                    results.innerHTML = "";
+                   
+                        results.innerHTML = results.innerHTML + currentContact.name.givenName  + " " + currentContact.name.familyName; 
+                        currentContact.remove(onRemoveSuccess,onRemoveError);
 
                 }
                 
-                function onSaveSuccess(contacts) {
-                    contact.innerHTML = contact.innerHTML + " saved!";
+                function onSaveSuccess(contact) {
+                    currentContact = contact;
+                    
+                    results.innerHTML = results.innerHTML + " saved!";
+                    del.style.visibility="";
+                    create.style.visibility="hidden";
+                    
                 }
                 
                 // onSaveError: Failed to get the contacts
@@ -76,12 +74,14 @@
                 function onSaveError(contactError) {
                     alert("Error = " + contactError.code);
                 }
-
+                
                 // onRemoveSuccess: Get a snapshot of the current contacts
                 //
                 function onRemoveSuccess(contacts) {
-                    contact.innerHTML = contact.innerHTML + " ... and then removed";
-                    myContact = null;
+                    results.innerHTML = results.innerHTML + " removed!";
+                    currentContact = null;
+                    del.style.visibility="hidden";
+                    create.style.visibility="";
                 }
                 
                 // onRemoveError: Failed to get the contacts
@@ -89,7 +89,7 @@
                 function onRemoveError(contactError) {
                     alert("Error = " + contactError.code);
                 }
-
+                
                 
                 function findContacts() {
                     // find all contacts with 'Bob' in any name field
@@ -114,7 +114,7 @@
                 function onError() {
                     alert('Nothing Found!');
                 }
-
+                
                 
                 </script>
             </head>
@@ -138,16 +138,16 @@
             <TABLE>
                 <TR>
                     <TD>
-                        <button onclick="">createContact() under construction...</button> <br>
-                        <button onclick="">removeContact() under construction...</button> <br>
-
+                        <button id="create" onclick="createContact()">createContact()</button>
+                        <BR>
+                        <button id="del" style="visibility:hidden;" onclick="removeContact()">removeContact()</button>
                     </TD>
                 </TR>
                 
                 
                 <TR>
-                    <TD id="contact" >
-                        
+                    <TD id="results" >
+                        hi2!
                     </TD>
                 </TR>
                 <TR>
