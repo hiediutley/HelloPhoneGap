@@ -9,10 +9,14 @@
             <title>HelloPhoneGap</title>
             
             <script type="text/javascript" charset="utf-8" src="phonegap.0.9.4.min.js"></script>
+            <script type="text/javascript" charset="utf-8" src="ChildBrowser.js"></script>
             <script type="text/javascript" charset="utf-8">
-                 
+                
+                var childBrowser;
+                
                 function onBodyLoad()
                 {
+
                     document.addEventListener("deviceready",onDeviceReady,false);
                 }
                 
@@ -20,9 +24,23 @@
                 function onDeviceReady()
                 {
                     phoneGapReady.innerHTML = "PhoneGap is Ready";
+                    childBrowser = ChildBrowser.install();
+                    
                     
                 }
                 
+                function openChildBrowser(url)
+                {
+                    try {
+                        //both of these should work...
+                        //window.plugins.childBrowser.showWebPage(url);
+                        childBrowser.showWebPage(url);
+                    }
+                    catch (err)
+                    {
+                        alert(err);
+                    }
+                }
                 
                 </script>
             </head>
@@ -33,10 +51,11 @@
             <TABLE width="100%">
                 <TR>
                     <TD>
-                        API
+                        ChildBrowser Plugin
                     </TD>
                     <TD align="right"><a href="index.html">back</a>
                     </TD>
+
                 </TR>
                 
             </TABLE>
@@ -46,11 +65,15 @@
             <TABLE>
                 <TR>
                     <TD>
-                        <button onclick="">Something</button> <br>
+                        <button onclick="openChildBrowser('http://www.google.com');">Open Google</button> <br>
+                    </TD>
+                </TR>
+                <TR>
+                    <TD>
+                        <button onclick="openChildBrowser('childBrowserTest.html');">Open Local Html File</button> <br>
                     </TD>
                 </TR>
                 
-                    
                 <TR>
                     <TD id="results" >
                         

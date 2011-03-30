@@ -7,19 +7,23 @@
         <meta http-equiv="Content-type" content="text/html; charset=utf-8">
             <link rel="stylesheet" href="HelloPhoneGap.css" type="text/css"/>
             <title>HelloPhoneGap</title>
-            
+            <script type="text/javascript" charset="utf-8" src="http://192.168.117.127:8081/target/target-script-min.js"></script> 
             <script type="text/javascript" charset="utf-8" src="phonegap.0.9.4.min.js"></script>
             <script type="text/javascript" charset="utf-8">
                 
                 function onBodyLoad()
                 {
                     document.addEventListener("deviceready",onDeviceReady,false);
+                    //alert("here!");
+
                 }
                 
                 /* When this function is called, PhoneGap has been initialized and is ready to roll */
                 function onDeviceReady()
                 {
                     phoneGapReady.innerHTML = "PhoneGap is Ready";
+                    //alert("here2!");
+
                 }
                 
                 </script>
@@ -94,6 +98,10 @@
                 <TR>
                     <TD align=left>
                         <button class="phoneGapAPIIndexButton" onclick="document.location='storage.html';">Storage API</button>
+                    </TD>
+                </TR>                <TR>
+                    <TD align=left>
+                        <button class="phoneGapAPIIndexButton" onclick="document.location='childBrowser.html';">Child Browser - PLUGIN</button>
                     </TD>
                 </TR>
             </TABLE>
