@@ -19,7 +19,6 @@
 		17B1C10B134382A200C23C63 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 17B1C0FA134382A200C23C63 /* README.txt */; };
 		17B1C10C134382A200C23C63 /* NativeControls.js in Sources */ = {isa = PBXBuildFile; fileRef = 17B1C0FD134382A200C23C63 /* NativeControls.js */; };
 		17B1C10D134382A200C23C63 /* NativeControls.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B1C0FE134382A200C23C63 /* NativeControls.m */; };
-		17B1C11E13439FA800C23C63 /* childBrowserTest.html in Resources */ = {isa = PBXBuildFile; fileRef = 17B1C11D13439FA800C23C63 /* childBrowserTest.html */; };
 		1D3623260D0F684500981E51 /* HelloPhoneGapAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* HelloPhoneGapAppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
@@ -81,7 +80,6 @@
 		17B1C0FC134382A200C23C63 /* NativeControls.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NativeControls.h; sourceTree = "<group>"; };
 		17B1C0FD134382A200C23C63 /* NativeControls.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = NativeControls.js; sourceTree = "<group>"; };
 		17B1C0FE134382A200C23C63 /* NativeControls.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NativeControls.m; sourceTree = "<group>"; };
-		17B1C11D13439FA800C23C63 /* childBrowserTest.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = childBrowserTest.html; path = www/childBrowserTest.html; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* HelloPhoneGapAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelloPhoneGapAppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* HelloPhoneGapAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelloPhoneGapAppDelegate.m; sourceTree = "<group>"; };
@@ -187,7 +185,6 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
-				17B1C11D13439FA800C23C63 /* childBrowserTest.html */,
 				301BF56E109A69640062928A /* www */,
 				301BF52D109A57CC0062928A /* PhoneGapLib.xcodeproj */,
 				080E96DDFE201D6D7F000001 /* Classes */,
@@ -366,7 +363,6 @@
 				17B1C105134382A200C23C63 /* ChildBrowserViewController.xib in Resources */,
 				17B1C106134382A200C23C63 /* compass.png in Resources */,
 				17B1C10B134382A200C23C63 /* README.txt in Resources */,
-				17B1C11E13439FA800C23C63 /* childBrowserTest.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

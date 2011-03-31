@@ -101,6 +101,7 @@ NativeControls.prototype.showTabBarItems = function() {
     var parameters = [ "NativeControls.showTabBarItems" ];
     for (var i = 0; i < arguments.length; i++) {
         parameters.push(arguments[i]);
+        //alert(arguments[i]);
     }
     PhoneGap.exec.apply(this, parameters);
 };

@@ -33,6 +33,7 @@ h1, .phoneGapAPITitle
     height: 380px;
     width: 320px;
     padding: 10px;
+    overflow: auto;
 
     
 }
@@ -46,7 +47,7 @@ button , .phoneGapAPIButton , .phoneGapAPIIndexButton
 
 .phoneGapAPIIndexButton
 {
-    width: 200px;
+    width: 220px;
 
 }
 .phoneGapAPIIndex
