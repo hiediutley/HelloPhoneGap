@@ -19,6 +19,9 @@
 		17B1C10B134382A200C23C63 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 17B1C0FA134382A200C23C63 /* README.txt */; };
 		17B1C10C134382A200C23C63 /* NativeControls.js in Sources */ = {isa = PBXBuildFile; fileRef = 17B1C0FD134382A200C23C63 /* NativeControls.js */; };
 		17B1C10D134382A200C23C63 /* NativeControls.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B1C0FE134382A200C23C63 /* NativeControls.m */; };
+		17D55DEC13462AFA00D3223A /* iPod.js in Sources */ = {isa = PBXBuildFile; fileRef = 17D55DE713462AFA00D3223A /* iPod.js */; };
+		17D55DED13462AFA00D3223A /* iPodCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 17D55DE913462AFA00D3223A /* iPodCommand.m */; };
+		17D55DEE13462AFA00D3223A /* iPodViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17D55DEB13462AFA00D3223A /* iPodViewController.m */; };
 		1D3623260D0F684500981E51 /* HelloPhoneGapAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* HelloPhoneGapAppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
@@ -80,6 +83,11 @@
 		17B1C0FC134382A200C23C63 /* NativeControls.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NativeControls.h; sourceTree = "<group>"; };
 		17B1C0FD134382A200C23C63 /* NativeControls.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = NativeControls.js; sourceTree = "<group>"; };
 		17B1C0FE134382A200C23C63 /* NativeControls.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NativeControls.m; sourceTree = "<group>"; };
+		17D55DE713462AFA00D3223A /* iPod.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = iPod.js; sourceTree = "<group>"; };
+		17D55DE813462AFA00D3223A /* iPodCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iPodCommand.h; sourceTree = "<group>"; };
+		17D55DE913462AFA00D3223A /* iPodCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iPodCommand.m; sourceTree = "<group>"; };
+		17D55DEA13462AFA00D3223A /* iPodViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iPodViewController.h; sourceTree = "<group>"; };
+		17D55DEB13462AFA00D3223A /* iPodViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iPodViewController.m; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* HelloPhoneGapAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelloPhoneGapAppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* HelloPhoneGapAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelloPhoneGapAppDelegate.m; sourceTree = "<group>"; };
@@ -172,6 +180,18 @@
 				17B1C0FE134382A200C23C63 /* NativeControls.m */,
 			);
 			path = NativeControls;
+			sourceTree = "<group>";
+		};
+		17D55DE613462AFA00D3223A /* iPod */ = {
+			isa = PBXGroup;
+			children = (
+				17D55DE713462AFA00D3223A /* iPod.js */,
+				17D55DE813462AFA00D3223A /* iPodCommand.h */,
+				17D55DE913462AFA00D3223A /* iPodCommand.m */,
+				17D55DEA13462AFA00D3223A /* iPodViewController.h */,
+				17D55DEB13462AFA00D3223A /* iPodViewController.m */,
+			);
+			path = iPod;
 			sourceTree = "<group>";
 		};
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
@@ -271,6 +291,7 @@
 		307C750510C5A3420062BCA9 /* Plugins */ = {
 			isa = PBXGroup;
 			children = (
+				17D55DE613462AFA00D3223A /* iPod */,
 				17B1C0EA134382A200C23C63 /* ChildBrowser */,
 				17B1C0FB134382A200C23C63 /* NativeControls */,
 			);
@@ -424,6 +445,9 @@
 				17B1C104134382A200C23C63 /* ChildBrowserViewController.m in Sources */,
 				17B1C10C134382A200C23C63 /* NativeControls.js in Sources */,
 				17B1C10D134382A200C23C63 /* NativeControls.m in Sources */,
+				17D55DEC13462AFA00D3223A /* iPod.js in Sources */,
+				17D55DED13462AFA00D3223A /* iPodCommand.m in Sources */,
+				17D55DEE13462AFA00D3223A /* iPodViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -448,7 +472,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = HelloPhoneGap_Prefix.pch;
 				INFOPLIST_FILE = "HelloPhoneGap-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.1;
 				PRODUCT_NAME = HelloPhoneGap;
 			};
 			name = Debug;
@@ -461,7 +485,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = HelloPhoneGap_Prefix.pch;
 				INFOPLIST_FILE = "HelloPhoneGap-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.1;
 				PRODUCT_NAME = HelloPhoneGap;
 			};
 			name = Release;
