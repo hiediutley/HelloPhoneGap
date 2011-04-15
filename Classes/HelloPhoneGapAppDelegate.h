@@ -8,9 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "PhoneGapDelegate.h"
+#import <MediaPlayer/MediaPlayer.h>
 
 @interface HelloPhoneGapAppDelegate : PhoneGapDelegate {
+
+    MPMediaItemCollection * selectedSong;
+
 }
+@property (nonatomic, retain) MPMediaItemCollection * selectedSong;
 
 @end
 

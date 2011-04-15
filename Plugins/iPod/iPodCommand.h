@@ -13,8 +13,13 @@
 @interface iPodCommand : PhoneGapCommand <MPMediaPickerControllerDelegate, UITableViewDelegate> {
     
     
-
+    NSString * successCallback;
+    NSString * failureCallback;
+    
 }
+
+@property (nonatomic, retain) NSString * successCallback;
+@property (nonatomic, retain) NSString * failureCallback;
 
 - (void) selectSong:(NSMutableArray*)arguments withDict:(NSMutableDictionary*)options;
 - (void) playSong:(NSMutableArray*)arguments withDict:(NSMutableDictionary*)options;

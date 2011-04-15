@@ -10,6 +10,7 @@
 #import "PhoneGapViewController.h"
 
 @implementation HelloPhoneGapAppDelegate
+@synthesize selectedSong;
 
 - (id) init
 {	
@@ -75,6 +76,7 @@
 
 - (void)dealloc
 {
+    [selectedSong release];
 	[ super dealloc ];
 }
 

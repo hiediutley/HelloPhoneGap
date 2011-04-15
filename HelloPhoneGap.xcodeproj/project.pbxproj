@@ -19,6 +19,9 @@
 		17B1C10B134382A200C23C63 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 17B1C0FA134382A200C23C63 /* README.txt */; };
 		17B1C10C134382A200C23C63 /* NativeControls.js in Sources */ = {isa = PBXBuildFile; fileRef = 17B1C0FD134382A200C23C63 /* NativeControls.js */; };
 		17B1C10D134382A200C23C63 /* NativeControls.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B1C0FE134382A200C23C63 /* NativeControls.m */; };
+		17D47519134FA046001A5F25 /* DSActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = 17D47518134FA046001A5F25 /* DSActivityView.m */; };
+		17D4751B134FA076001A5F25 /* ActivityIndicator.js in Sources */ = {isa = PBXBuildFile; fileRef = 17D4751A134FA076001A5F25 /* ActivityIndicator.js */; };
+		17D4751E134FA124001A5F25 /* ActivityIndicatorCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 17D4751D134FA124001A5F25 /* ActivityIndicatorCommand.m */; };
 		17D55DEC13462AFA00D3223A /* iPod.js in Sources */ = {isa = PBXBuildFile; fileRef = 17D55DE713462AFA00D3223A /* iPod.js */; };
 		17D55DED13462AFA00D3223A /* iPodCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 17D55DE913462AFA00D3223A /* iPodCommand.m */; };
 		17D55DEE13462AFA00D3223A /* iPodViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17D55DEB13462AFA00D3223A /* iPodViewController.m */; };
@@ -83,6 +86,11 @@
 		17B1C0FC134382A200C23C63 /* NativeControls.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NativeControls.h; sourceTree = "<group>"; };
 		17B1C0FD134382A200C23C63 /* NativeControls.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = NativeControls.js; sourceTree = "<group>"; };
 		17B1C0FE134382A200C23C63 /* NativeControls.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NativeControls.m; sourceTree = "<group>"; };
+		17D47517134FA046001A5F25 /* DSActivityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSActivityView.h; sourceTree = "<group>"; };
+		17D47518134FA046001A5F25 /* DSActivityView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSActivityView.m; sourceTree = "<group>"; };
+		17D4751A134FA076001A5F25 /* ActivityIndicator.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = ActivityIndicator.js; sourceTree = "<group>"; };
+		17D4751C134FA124001A5F25 /* ActivityIndicatorCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityIndicatorCommand.h; sourceTree = "<group>"; };
+		17D4751D134FA124001A5F25 /* ActivityIndicatorCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityIndicatorCommand.m; sourceTree = "<group>"; };
 		17D55DE713462AFA00D3223A /* iPod.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = iPod.js; sourceTree = "<group>"; };
 		17D55DE813462AFA00D3223A /* iPodCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iPodCommand.h; sourceTree = "<group>"; };
 		17D55DE913462AFA00D3223A /* iPodCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iPodCommand.m; sourceTree = "<group>"; };
@@ -180,6 +188,18 @@
 				17B1C0FE134382A200C23C63 /* NativeControls.m */,
 			);
 			path = NativeControls;
+			sourceTree = "<group>";
+		};
+		17D47516134FA046001A5F25 /* ActivityIndicator */ = {
+			isa = PBXGroup;
+			children = (
+				17D4751A134FA076001A5F25 /* ActivityIndicator.js */,
+				17D47517134FA046001A5F25 /* DSActivityView.h */,
+				17D47518134FA046001A5F25 /* DSActivityView.m */,
+				17D4751C134FA124001A5F25 /* ActivityIndicatorCommand.h */,
+				17D4751D134FA124001A5F25 /* ActivityIndicatorCommand.m */,
+			);
+			path = ActivityIndicator;
 			sourceTree = "<group>";
 		};
 		17D55DE613462AFA00D3223A /* iPod */ = {
@@ -291,6 +311,7 @@
 		307C750510C5A3420062BCA9 /* Plugins */ = {
 			isa = PBXGroup;
 			children = (
+				17D47516134FA046001A5F25 /* ActivityIndicator */,
 				17D55DE613462AFA00D3223A /* iPod */,
 				17B1C0EA134382A200C23C63 /* ChildBrowser */,
 				17B1C0FB134382A200C23C63 /* NativeControls */,
@@ -448,6 +469,9 @@
 				17D55DEC13462AFA00D3223A /* iPod.js in Sources */,
 				17D55DED13462AFA00D3223A /* iPodCommand.m in Sources */,
 				17D55DEE13462AFA00D3223A /* iPodViewController.m in Sources */,
+				17D47519134FA046001A5F25 /* DSActivityView.m in Sources */,
+				17D4751B134FA076001A5F25 /* ActivityIndicator.js in Sources */,
+				17D4751E134FA124001A5F25 /* ActivityIndicatorCommand.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
