@@ -9,6 +9,7 @@
             <title>HelloPhoneGap</title>
             
             <script type="text/javascript" charset="utf-8" src="phonegap.0.9.4.min.js"></script>
+
             <script type="text/javascript" charset="utf-8">
                 
                 var pictureSource;   // picture source
@@ -47,6 +48,7 @@
                     // The inline CSS rules are used to resize the image
                     //
                     myImage.src = "data:image/jpeg;base64," + imageData;
+                
                 }
                 
                 // Called when a photo is successfully retrieved
@@ -87,17 +89,28 @@
                 // A button will call this function
                 //
                 function capturePhotoEdit() {
+                      try {
                     // Take picture using device camera, allow edit, and retrieve image as base64-encoded string  
                     navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 20, allowEdit: true }); 
-                }
+                      }catch (err)
+                          {
+                              alert(err);
+                          }
+                      }
                 
                 // A button will call this function
                 //
                 function getPhoto(source) {
+                    
+                    try {
                     // Retrieve image file location from specified source
                     navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50, 
                                                 destinationType: destinationType.FILE_URI,
                                                 sourceType: source });
+                    }catch (err)
+                    {
+                        alert(err);
+                    }
                 }
                 
                 function onFail(mesage) {
@@ -138,12 +151,12 @@
                 </TR>
                 <TR>
                     <TD>
-                        <button onclick="getPhoto(pictureSource.PHOTOLIBRARY);">From Photo Library</button><br>
+                        <button onclick="try{getPhoto(pictureSource.PHOTOLIBRARY);}catch(err){alert(err);};">From Photo Library</button><br>
                     </TD>
                 </TR>
                 <TR>
                     <TD>
-                        <button onclick="getPhoto(pictureSource.SAVEDPHOTOALBUM);">From Photo Album</button><br>
+                        <button onclick="try{getPhoto(pictureSource.SAVEDPHOTOALBUM);}catch(err){alert(err);};">From Photo Album</button><br>
                     </TD>
                 </TR>
                 
@@ -161,4 +174,6 @@
         <DIV id="phoneGapReady" class="phoneGapReady">waiting for PhoneGap to initialize....</DIV>
         
     </body>
+    
+
 </html>
